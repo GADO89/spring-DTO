@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController("/student")
+@RestController
+@RequestMapping("/student")
 public class StudentController {
 
     @Autowired
     private StudentService studentService;
 
-    @RequestMapping("/allStudents")
+    @GetMapping("/allStudents")
     public List<Student> getAllStudents(){
         return studentService.getStudents();
     }

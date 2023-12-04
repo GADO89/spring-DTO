@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController("/course")
+@RestController
+@RequestMapping("/course")
 public class CourseController {
 
     @Autowired
     private CourseService  courseService;
 
-    @RequestMapping("/allCourse")
+    @GetMapping("/allCourse")
     public List<Course> getAllCourses(){
         return courseService.getCourses();
     }

@@ -1,4 +1,4 @@
-package com.spring.springdto.spring_dto;
+package com.spring.springdto;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

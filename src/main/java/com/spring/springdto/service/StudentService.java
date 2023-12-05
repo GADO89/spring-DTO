@@ -25,7 +25,7 @@ public class StudentService {
         List<StudentDTO> studentDTOS=new ArrayList<>();
         for (int i=0;i<students.size();i++){
             StudentDTO studentDTO=modelMapper.map(students.get(i), StudentDTO.class);
-            
+
             //studentDTO.setId(students.get(i).getId());
            // studentDTO.setName(students.get(i).getName());
             studentDTOS.add(studentDTO);
@@ -35,7 +35,10 @@ public class StudentService {
 
     public StudentResponse getStudent(Long id){
        Student student= studentRepo.findById(id).get();
-       StudentResponse studentResponse=modelMapper.map(student, StudentResponse.class);
+       StudentResponse studentResponse=new StudentResponse();
+       studentResponse.setPhone("01125589989");
+       // studentResponse  =modelMapper.map(student, StudentResponse.class);
+       modelMapper.map(student,studentResponse);
        return studentResponse;
     }
 }

@@ -1,6 +1,7 @@
 package com.spring.springdto.controller;
 
 import com.spring.springdto.model.Student;
+import com.spring.springdto.model.StudentDTO;
 import com.spring.springdto.repo.StudentRepo;
 import com.spring.springdto.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class StudentController {
     private StudentService studentService;
 
     @GetMapping("/allStudents")
-    public List<Student> getAllStudents(){
+    public List<StudentDTO> getAllStudents(){
         return studentService.getStudents();
     }
 }

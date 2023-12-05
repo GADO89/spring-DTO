@@ -1,6 +1,7 @@
 package com.spring.springdto.controller;
 
 import com.spring.springdto.model.Course;
+import com.spring.springdto.model.CourseDTO;
 import com.spring.springdto.model.Student;
 import com.spring.springdto.service.CourseService;
 import com.spring.springdto.service.StudentService;
@@ -19,7 +20,7 @@ public class CourseController {
     private CourseService  courseService;
 
     @GetMapping("/allCourse")
-    public List<Course> getAllCourses(){
+    public List<CourseDTO> getAllCourses(){
         return courseService.getCourses();
     }
 }

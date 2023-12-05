@@ -26,4 +26,8 @@ public class StudentService {
         }
         return studentDTOS;
     }
+
+    public Student getStudent(Long id){
+       return studentRepo.findById(id).get();
+    }
 }

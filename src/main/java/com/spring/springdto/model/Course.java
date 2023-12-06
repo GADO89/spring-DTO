@@ -1,7 +1,10 @@
 package com.spring.springdto.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 @Entity
 public class Course {
 
@@ -10,12 +13,14 @@ public class Course {
 
     private String name;
 
-
-
     private String cost;
 
     private String time;
 
+    @ManyToOne(fetch = FetchType.LAZY)  
+    @JoinColumn(name = "student_id")
+    private Student student;
+    
 
     public Long getId() {
         return id;

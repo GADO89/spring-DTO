@@ -1,5 +1,7 @@
 package com.spring.springdto.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
@@ -19,7 +21,8 @@ public class Course {
 
 	private String time;
 
-    @ManyToOne(fetch = FetchType.LAZY)  
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.EAGER)  
     @JoinColumn(name = "student_id")
     private Student student;
     
@@ -28,6 +31,14 @@ public class Course {
     
 
    
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
 	public Long getId() {
         return id;
     }

@@ -2,6 +2,8 @@ package com.spring.springdto.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
@@ -17,12 +19,21 @@ public class Student {
 
     private String age;
     
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "student")
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "student")
     private List<Course>courses;
     
     
 
    
+	public List<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
+	}
+
 	public Long getId() {
         return id;
     }

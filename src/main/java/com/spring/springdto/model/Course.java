@@ -15,14 +15,20 @@ public class Course {
 
     private String cost;
 
-    private String time;
+  
+
+	private String time;
 
     @ManyToOne(fetch = FetchType.LAZY)  
     @JoinColumn(name = "student_id")
     private Student student;
     
+    
+    
+    
 
-    public Long getId() {
+   
+	public Long getId() {
         return id;
     }
 

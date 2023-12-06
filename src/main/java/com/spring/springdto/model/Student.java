@@ -19,8 +19,11 @@ public class Student {
     
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "student")
     private List<Course>courses;
+    
+    
 
-    public Long getId() {
+   
+	public Long getId() {
         return id;
     }
 

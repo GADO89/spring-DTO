@@ -8,15 +8,14 @@ import jakarta.persistence.OneToMany;
 
 public class StudentPositionDto {
 
-   
-	
+
+
+
 	private Long id;
-	
+
 	private String name;
-	
-	
-	
-	private List<CourseResponse> courses=new ArrayList<CourseResponse>();
+
+	private List<CourseResponse> courses = new ArrayList<>();
 
 	public Long getId() {
 		return id;
@@ -41,8 +40,5 @@ public class StudentPositionDto {
 	public void setCourses(List<CourseResponse> courses) {
 		this.courses = courses;
 	}
-
-   
-	
 	
 }

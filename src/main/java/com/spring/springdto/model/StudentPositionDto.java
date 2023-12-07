@@ -6,7 +6,6 @@ import java.util.List;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 
-@Entity
 public class StudentPositionDto {
 
    
@@ -17,8 +16,7 @@ public class StudentPositionDto {
 	
 	
 	
-	@OneToMany
-	private List<Course> courses=new ArrayList<Course>();
+	private List<CourseResponse> courses=new ArrayList<CourseResponse>();
 
 	public Long getId() {
 		return id;
@@ -36,7 +34,15 @@ public class StudentPositionDto {
 		this.name = name;
 	}
 
+	public List<CourseResponse> getCourses() {
+		return courses;
+	}
 
+	public void setCourses(List<CourseResponse> courses) {
+		this.courses = courses;
+	}
+
+   
 	
 	
 }

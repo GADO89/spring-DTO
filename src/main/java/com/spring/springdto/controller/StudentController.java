@@ -2,8 +2,8 @@ package com.spring.springdto.controller;
 
 import com.spring.springdto.model.Student;
 import com.spring.springdto.model.StudentDTO;
+import com.spring.springdto.model.StudentPositionDto;
 import com.spring.springdto.model.StudentResponse;
-import com.spring.springdto.repo.StudentRepo;
 import com.spring.springdto.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,4 +34,10 @@ public class StudentController {
     public StudentResponse getStudent(@RequestParam("id_student") Long id){
         return studentService.getStudent(id);
     }
+
+    @GetMapping("/getStudent-course")
+    public StudentPositionDto getStudentCourses(@RequestParam("course_id_list")List <Long> ids){
+        return studentService.getStudentCourses(ids);
+    }
+
 }
